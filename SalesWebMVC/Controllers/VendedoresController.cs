@@ -23,41 +23,41 @@ namespace SalesWebMVC.Controllers
             _departamentoService = departamentoService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var list = _vendedorService.FindAll();
+            var list = await _vendedorService.FindAllAsync();
 
             return View(list);
         }
 
-        public IActionResult Criar()
+        public async Task<IActionResult> Criar()
         {
-            var departamentos = _departamentoService.FindAll();
+            var departamentos = await _departamentoService.FindAllAsync();
             var viewModel = new VendedorFormViewModel { Departamentos = departamentos };
             return View(viewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Criar(Vendedor vendedor)
+        public async Task<IActionResult> Criar(Vendedor vendedor)
         {
             if (!ModelState.IsValid)
             {
-                var departamentos = _departamentoService.FindAll();
+                var departamentos = await _departamentoService.FindAllAsync();
                 var viewModel = new VendedorFormViewModel { Departamentos = departamentos, Vendedor = vendedor };
 
                 return View(viewModel);
             }
-            _vendedorService.insert(vendedor);
+            await _vendedorService.insertAsync(vendedor);
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Excluir(int? id)
+        public async Task<IActionResult> Excluir(int? id)
         {
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "id nao fornecido" });
             }
-            var obj = _vendedorService.FindById(id.Value);
+            var obj = await _vendedorService.FindByIdAsync(id.Value);
 
             if (obj == null)
             {
@@ -68,20 +68,20 @@ namespace SalesWebMVC.Controllers
 
         }
         [HttpPost]
-        public IActionResult Excluir(int id)
+        public async Task<IActionResult> Excluir(int id)
         {
-            _vendedorService.Remove(id);
+            await _vendedorService.RemoveAsync(id);
             return RedirectToAction(nameof(Index));
 
         }
-        public IActionResult Detalhes(int? id)
+        public async Task<IActionResult> Detalhes(int? id)
         {
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "id nao fornecido" });
 
             }
-            var obj = _vendedorService.FindById(id.Value);
+            var obj = await _vendedorService.FindByIdAsync(id.Value);
 
             if (obj == null)
             {
@@ -92,31 +92,31 @@ namespace SalesWebMVC.Controllers
 
         }
 
-        public IActionResult Editar(int? id)
+        public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "id nao fornecido" });
 
             }
-            var obj = _vendedorService.FindById(id.Value);
+            var obj = await _vendedorService.FindByIdAsync(id.Value);
             if(obj == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "id nao encontrado" });
 
             }
 
-            List<Departamento> departamentos = _departamentoService.FindAll();
+            List<Departamento> departamentos = await _departamentoService.FindAllAsync();
             VendedorFormViewModel viewModel = new VendedorFormViewModel { Vendedor = obj, Departamentos = departamentos };
             return View(viewModel);
 
         }
         [HttpPost]
-        public IActionResult Editar(int id, Vendedor vendedor)
+        public async Task<IActionResult> Editar(int id, Vendedor vendedor)
         {
             if (!ModelState.IsValid)
             {
-                var departamentos = _departamentoService.FindAll();
+                var departamentos = await _departamentoService.FindAllAsync();
                 var viewModel = new VendedorFormViewModel { Departamentos = departamentos, Vendedor = vendedor };
 
                 return View(viewModel);
@@ -129,7 +129,7 @@ namespace SalesWebMVC.Controllers
             }
             try
             {
-                _vendedorService.Update(vendedor);
+                await _vendedorService.UpdateAsync(vendedor);
                 return RedirectToAction(nameof(Index));
             }
             catch (ApplicationException e)

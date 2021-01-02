@@ -39,3 +39,4 @@ C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp
 C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Excluir.g.cshtml.cs
 C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Detalhes.g.cshtml.cs
 C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Editar.g.cshtml.cs
+C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\SalesWebMVC.csprojAssemblyReference.cache
