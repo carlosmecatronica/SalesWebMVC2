@@ -29,4 +29,4 @@ C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp
 C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\SalesWebMVC.dll
 C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\SalesWebMVC.pdb
 C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\SalesWebMVC.csproj.CopyComplete
-C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\SalesWebMVC.csprojAssemblyReference.cache
+C:\2021\Enorweb\Compras\Learn\Udemy\SalesWebMVC\SalesWebMVC\obj\Debug\netcoreapp2.1\Razor\Views\Departamentos\Index.g.cshtml.cs
