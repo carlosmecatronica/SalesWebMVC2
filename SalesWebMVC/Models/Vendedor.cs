@@ -10,13 +10,18 @@ namespace SalesWebMVC.Models
     public class Vendedor
     {
         public int Id { get; set; }
+        [Required(ErrorMessage ="{0} Requerido")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage ="{0} tamanho , deve ser entre {1} e {2} ")]
         public string Nome { get; set; }
         [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "{0} Requerido")]
         public string Email { get; set; }
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "{0} Requerido")]
         public DateTime DataNacimento { get; set; }
         [DisplayFormat(DataFormatString ="{0:F2}")]
+        [Required(ErrorMessage = "{0} Requerido")]
         public Double SalarioBase { get; set; }
         public Departamento Departamento { get; set; }
         public int DepartamentoId { get; set; }
