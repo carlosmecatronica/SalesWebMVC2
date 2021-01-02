@@ -13,7 +13,7 @@ namespace SalesWebMVC.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        ,
                     Nome = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     DataNacimento = table.Column<DateTime>(nullable: false),
@@ -36,7 +36,7 @@ namespace SalesWebMVC.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                       ,
                     Data = table.Column<DateTime>(nullable: false),
                     Quantia = table.Column<double>(nullable: false),
                     Status = table.Column<int>(nullable: false),
