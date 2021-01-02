@@ -19,8 +19,10 @@ namespace SalesWebMVC.Controllers
         {
             DateTime dataAtual = DateTime.Now;
 
-            ViewData["Message"] = "Hoje e :  " + dataAtual.ToLongDateString() ;
+            ViewData["Message"] = "Aplicativo de Vendas Com C# MVC Core " ;
 
+            ViewData["Dev"] = "Carlos Rodrigues";
+            ViewData["Email"] = "carlos@enorsul.com.br";
             
 
             return View();
