@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SalesWebMVC.Models;
-    using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Services.Exceptions;
 
 namespace SalesWebMVC.Services
@@ -39,7 +39,7 @@ namespace SalesWebMVC.Services
         }
         public void Update(Vendedor obj)
         {
-            if(!_context.Vendedor.Any(x => x.Id == obj.Id))
+            if (!_context.Vendedor.Any(x => x.Id == obj.Id))
             {
                 throw new NaoEncontradoExceptions("id nao encontrado");
 
@@ -55,8 +55,9 @@ namespace SalesWebMVC.Services
 
                 throw new DbConcurrencyException(e.Message);
             }
-               
+
         }
+       
 
     }
 }
