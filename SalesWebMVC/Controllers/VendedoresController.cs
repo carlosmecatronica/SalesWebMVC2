@@ -70,8 +70,16 @@ namespace SalesWebMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Excluir(int id)
         {
-            await _vendedorService.RemoveAsync(id);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _vendedorService.RemoveAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (IntegrityException e)
+            {
+
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
 
         }
         public async Task<IActionResult> Detalhes(int? id)
